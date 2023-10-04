@@ -33,13 +33,16 @@ def predict(image):
     return class_name, confidence_score
 
 # Streamlit app title
-st.title("Computer Vision App")
+st.title("Lettucespinach model")
 
 # Add a Start button to initiate webcam feed
 start_button = st.button("Start")
 
 if start_button:
-    while True:
+    num_inputs = 5  # Define the number of inputs to process
+    input_counter = 0  # Initialize the input counter
+
+    while input_counter < num_inputs:
         ret, frame = camera.read()
         if not ret:
             st.text("Error: Unable to capture webcam feed.")
@@ -56,9 +59,9 @@ if start_button:
         st.text(f"Class: {class_name[2:]}")
         st.text(f"Confidence Score: {np.round(confidence_score * 100, 2)}%")
 
-        # Add a Stop button to stop the webcam feed
-        stop_button = st.button("Stop")
-        if stop_button:
+        input_counter += 1  # Increment the input counter
+
+        if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
 # Release the webcam and close OpenCV window
