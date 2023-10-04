@@ -1,8 +1,11 @@
 import streamlit as st
 import tensorflow as tf
 import numpy as np
-import cv2
 import time
+import os
+os.environ["DISPLAY"] = ":0"  # Set the DISPLAY environment variable
+import cv2
+
 
 # Load your TensorFlow model and labels here
 model = tf.keras.models.load_model("keras_model.h5")
