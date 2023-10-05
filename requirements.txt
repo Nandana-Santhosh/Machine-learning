@@ -2,3 +2,4 @@ tensorflow == 2.13.0
 opencv-python
 numpy == 1.24.3
 keras == 2.13.1
+venv myenv
