@@ -30,8 +30,11 @@ def predict(image):
 # Access the webcam
 cap = cv2.VideoCapture(0)
 
+# Global variable to count captured frames
+frame_count = 0
+
 # Main Streamlit loop
-while True:
+while frame_count < 5:
     # Read a frame from the webcam
     ret, frame = cap.read()
 
@@ -46,9 +49,8 @@ while True:
     st.write(f"Class: {class_name[2:]}")
     st.write(f"Confidence Score: {str(np.round(confidence_score * 100))[:-2]} %")
 
-    # Check for Streamlit app exit
-    if st.button("Exit"):
-        break
+    # Increment the frame count
+    frame_count += 1
 
 # Release the webcam
 cap.release()
