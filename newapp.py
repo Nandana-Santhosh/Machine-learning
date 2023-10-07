@@ -5,7 +5,7 @@ from tensorflow.keras.models import load_model
 import cv2
 
 # Load the model
-model = load_model("keras_Model.h5")
+model = load_model("keras_model.h5")
 
 # Load the labels
 class_names = open("labels.txt", "r").readlines()
