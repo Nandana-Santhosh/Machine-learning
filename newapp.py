@@ -6,6 +6,7 @@ import cv2
 
 # Load the model
 model = load_model("keras_model.h5")
+model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
 # Load the labels
 class_names = open("labels.txt", "r").readlines()
@@ -32,6 +33,7 @@ cap = cv2.VideoCapture(0)
 
 # Global variable to count captured frames
 frame_count = 0
+
 
 # Main Streamlit loop
 while frame_count < 5:
