@@ -21,7 +21,7 @@ def preprocess_image(image):
 
 # Streamlit app
 def main():
-    st.title("Image Classification App")
+    st.title("Lettuce spinach classifier")
     st.sidebar.header("Settings")
 
     # Upload an image
