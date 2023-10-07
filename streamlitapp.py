@@ -29,7 +29,7 @@ def main():
 
     if uploaded_image:
         # Load the model and labels
-        model, class_names = load_model_and_labels("keras_Model.h5", "labels.txt")
+        model, class_names = load_model_and_labels("keras_model.h5", "labels.txt")
 
         # Read the uploaded image using OpenCV
         image = cv2.imdecode(np.fromstring(uploaded_image.read(), np.uint8), 1)
